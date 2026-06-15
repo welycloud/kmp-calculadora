@@ -1160,7 +1160,7 @@ async function fetchLiveRates() {
   badge.className = 'rate-badge loading';
   document.getElementById('rate-date').textContent = 'actualizando…';
   try {
-    const res = await fetch('https://corsproxy.io/?https://mindicador.cl/api', { cache: 'no-store' });
+    const res = await fetch('./rates.json?t=' + Date.now(), { cache: 'no-store' });
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
 
