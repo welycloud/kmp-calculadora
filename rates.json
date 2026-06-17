@@ -1,18 +1,7 @@
 {
   "version": "1.7.0",
-  "fecha": "2026-06-15T12:00:00.000Z",
-  "uf": {
-    "codigo": "uf",
-    "nombre": "Unidad de fomento (UF)",
-    "unidad_medida": "Pesos",
-    "fecha": "2026-06-14T04:00:00.000Z",
-    "valor": 40776.84
-  },
-  "dolar": {
-    "codigo": "dolar",
-    "nombre": "Dólar observado",
-    "unidad_medida": "Pesos",
-    "fecha": "2026-06-15T04:00:00.000Z",
-    "valor": 899.3
-  }
+  "autor": "mindicador.cl",
+  "fecha": "2026-06-17T12:00:00.000Z",
+  "uf": { "codigo": "uf", "nombre": "Unidad de fomento (UF)", "unidad_medida": "Pesos", "fecha": "2026-06-16T04:00:00.000Z", "valor": 40782.27 },
+  "dolar": { "codigo": "dolar", "nombre": "Dolar observado", "unidad_medida": "Pesos", "fecha": "2026-06-16T04:00:00.000Z", "valor": 890.13 }
 }
