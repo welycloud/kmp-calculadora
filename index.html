@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kantar Marketplace · Calculadora de Precios</title>
+<title>Kantar Marketplace Â· Calculadora de Precios</title>
 <!-- build: 2026-06-17 -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjQzcwMEQzIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNDAlIiBzdG9wLWNvbG9yPSIjRUIwMDY0Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iNzUlIiBzdG9wLWNvbG9yPSIjRkY1MDAwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI0ZFREIwMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjMGEwYTBhIiByeD0iNSIvPgogIDx0ZXh0IHg9IjE2IiB5PSIyNCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjkwMCIgZm9udC1zaXplPSIyMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0idXJsKCNnKSI+SzwvdGV4dD4KPC9zdmc+Cg==">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
-  /* ── KANTAR MARKETPLACE BRAND TOKENS ── */
+  /* ââ KANTAR MARKETPLACE BRAND TOKENS ââ */
   :root {
     /* Primary palette */
     --km-purple:  #C700D3;
     --km-pink:    #EB0064;
     --km-orange:  #FF5000;
     --km-yellow:  #FEDB00;
-    /* Gradient: violet → yellow */
+    /* Gradient: violet â yellow */
     --km-gradient: linear-gradient(90deg, #C700D3 0%, #EB0064 33%, #FF5000 66%, #FEDB00 100%);
     /* Secondary palette */
     --km-black:   #000000;
@@ -62,7 +62,7 @@
     z-index: 200;
   }
 
-  /* ── HEADER ── */
+  /* ââ HEADER ââ */
   header {
     position: sticky; top: 3px; z-index: 100;
     background: rgba(10,10,10,0.95);
@@ -131,14 +131,14 @@
   }
   .btn-reset:hover { border-color: var(--border2); color: var(--text); }
 
-  /* ── LAYOUT ── */
+  /* ââ LAYOUT ââ */
   .main {
     display: grid;
     grid-template-columns: 380px 1fr;
     height: calc(100vh - 63px);
   }
 
-  /* ── LEFT PANEL ── */
+  /* ââ LEFT PANEL ââ */
   .panel-left {
     border-right: 1px solid var(--border);
     overflow-y: auto;
@@ -252,7 +252,7 @@
   .btn-calc:hover { background: #d4005a; }
   .btn-calc:active { transform: scale(.99); }
 
-  /* ── RIGHT PANEL ── */
+  /* ââ RIGHT PANEL ââ */
   .panel-right {
     overflow-y: auto; overflow-x: hidden;
     padding: 28px 32px;
@@ -476,29 +476,29 @@
          alt="Kantar Marketplace" 
          style="height:28px; width:auto; display:block;">
     <div class="logo-divider"></div>
-    <div class="logo-tool">Pricing Calculator · Chile</div>
+    <div class="logo-tool">Pricing Calculator Â· Chile</div>
   </div>
   <div class="header-right">
     <div class="rate-badge loading" id="rate-badge">
       <div class="rate-status-dot"></div>
-      USD <span id="hdr-usd">…</span> &nbsp;·&nbsp; UF <span id="hdr-uf">…</span>
+      USD <span id="hdr-usd">â¦</span> &nbsp;Â·&nbsp; UF <span id="hdr-uf">â¦</span>
       <span class="rate-date" id="rate-date">actualizando</span>
     </div>
-    <button class="btn-reset" onclick="resetAll()">↺ Resetear</button>
+    <button class="btn-reset" onclick="resetAll()">âº Resetear</button>
   </div>
 </header>
 
 <div class="main">
 
-  <!-- ── LEFT PANEL ── -->
+  <!-- ââ LEFT PANEL ââ -->
   <aside class="panel-left">
 
-    <div class="section-label">Parámetros de cotización</div>
+    <div class="section-label">ParÃ¡metros de cotizaciÃ³n</div>
 
     <div class="field-group">
       <div class="field-row">
         <div>
-          <label>Dólar (CLP)</label>
+          <label>DÃ³lar (CLP)</label>
           <input type="number" id="usd-rate" value="890" min="1" step="1" oninput="onRateChange()">
         </div>
         <div>
@@ -508,7 +508,7 @@
       </div>
     </div>
 
-    <!-- Nombre proyecto y Target — compactos, en una sola fila -->
+    <!-- Nombre proyecto y Target â compactos, en una sola fila -->
     <div class="field-group">
       <div class="field-row">
         <div>
@@ -527,7 +527,7 @@
     <div class="field-group">
       <label>Domain</label>
       <select id="domain" onchange="onDomainChange()">
-        <option value="">— Selecciona —</option>
+        <option value="">â Selecciona â</option>
         <option value="Creative">Creative</option>
         <option value="Brand">Brand</option>
         <option value="Innovation">Innovation</option>
@@ -536,9 +536,9 @@
     </div>
 
     <div class="field-group">
-      <label>Tipo de solución</label>
+      <label>Tipo de soluciÃ³n</label>
       <select id="solution" onchange="onSolutionChange()">
-        <option value="">— Selecciona domain primero —</option>
+        <option value="">â Selecciona domain primero â</option>
       </select>
     </div>
 
@@ -552,11 +552,11 @@
 
     <div class="divider"></div>
 
-    <!-- Nº Celdas — solo visible para Brand, va primero -->
+    <!-- NÂº Celdas â solo visible para Brand, va primero -->
     <div class="field-group" id="celdas-group" style="display:none;">
       <div class="field-row">
         <div>
-          <label>Nº Celdas</label>
+          <label>NÂº Celdas</label>
           <input type="number" id="num-celdas" value="1" min="1" max="20" step="1" oninput="onBrandParamsChange()">
         </div>
         <div>
@@ -580,7 +580,7 @@
     <div class="field-group">
       <div class="field-row">
         <div>
-          <label>Nº Ads / C&amp;P</label>
+          <label>NÂº Ads / C&amp;P</label>
           <input type="number" id="num-ads" value="1" min="1" max="20" step="1" oninput="onNumAdsChange()">
         </div>
         <div>
@@ -600,7 +600,7 @@
           <label>IR (%)</label>
           <select id="ir">
             <option value="high">30%+</option>
-            <option value="mid">20–29%</option>
+            <option value="mid">20â29%</option>
             <option value="low">Bajo 20%</option>
             <option value="na">N/A</option>
           </select>
@@ -614,11 +614,11 @@
     <div class="field-group" style="margin-bottom:6px;">
       <div class="collapsible-header" onclick="toggleCostos()">
         <div class="collapsible-title">Costos directos</div>
-        <div class="collapsible-icon" id="costos-icon">▾</div>
+        <div class="collapsible-icon" id="costos-icon">â¾</div>
       </div>
       <div class="collapsible-body" id="costos-body">
         <div style="font-size:10px;color:var(--muted2);margin-bottom:12px;line-height:1.5;">
-          Se calculan automáticamente. Ajusta manualmente si es necesario.
+          Se calculan automÃ¡ticamente. Ajusta manualmente si es necesario.
         </div>
 
         <div class="field-group">
@@ -677,7 +677,7 @@
               </div>
             </div>
             <div>
-              <label>Conversión</label>
+              <label>ConversiÃ³n</label>
               <div class="input-wrap">
                 <input type="number" id="conv-cost" value="" placeholder="Auto" min="0" step="1000" oninput="calculate()">
                 <span class="input-unit">CLP</span>
@@ -700,17 +700,17 @@
       </div>
     </div>
 
-    <button class="btn-calc" onclick="calculate()">Calcular cotización</button>
+    <button class="btn-calc" onclick="calculate()">Calcular cotizaciÃ³n</button>
 
   </aside>
 
-  <!-- ── RIGHT PANEL ── -->
+  <!-- ââ RIGHT PANEL ââ -->
   <main class="panel-right" id="results-area">
 
     <div class="empty-state" id="empty-state">
       <div class="empty-helix"></div>
       <div class="empty-text">
-        Selecciona un domain y tipo de solución<br>para ver la cotización estimada.
+        Selecciona un domain y tipo de soluciÃ³n<br>para ver la cotizaciÃ³n estimada.
       </div>
     </div>
 
@@ -718,10 +718,10 @@
 
       <div class="results-header">
         <div>
-          <div class="results-title">Cotización: <span id="res-solution-name">—</span></div>
-          <div class="results-subtitle" id="res-subtitle">Chile · — · With Service</div>
+          <div class="results-title">CotizaciÃ³n: <span id="res-solution-name">â</span></div>
+          <div class="results-subtitle" id="res-subtitle">Chile Â· â Â· With Service</div>
         </div>
-        <div class="delivery-tag">📅 <span id="res-delivery">—</span></div>
+        <div class="delivery-tag">ð <span id="res-delivery">â</span></div>
       </div>
 
       <!-- Price hero -->
@@ -769,14 +769,14 @@
             <div class="prof-label">Operating Profit</div>
             <div class="prof-name" id="res-op-clp">$0 CLP</div>
           </div>
-          <div class="prof-pct good" id="res-op-pct">—%</div>
+          <div class="prof-pct good" id="res-op-pct">â%</div>
         </div>
         <div class="prof-card">
           <div>
             <div class="prof-label">Net Sales (NS)</div>
             <div class="prof-name" id="res-ns-clp">$0 CLP</div>
           </div>
-          <div class="prof-pct good" id="res-ns-pct">—%</div>
+          <div class="prof-pct good" id="res-ns-pct">â%</div>
         </div>
       </div>
 
@@ -818,7 +818,7 @@
 </div>
 
 <footer style="text-align:right; padding: 10px 32px; font-family: var(--mono); font-size: 10px; color: var(--muted2); letter-spacing: 0.06em; border-top: 1px solid var(--border);">
-  Designed &amp; built by Francisco Cubillos · 2026 &nbsp;·&nbsp; <span style="opacity:0.6">v1.4</span>
+  Designed &amp; built by Francisco Cubillos Â· 2026 &nbsp;Â·&nbsp; <span style="opacity:0.6">v1.4</span>
 </footer>
 
 <script>
@@ -849,8 +849,8 @@ const SOLUTIONS = {
     'BrandEvaluator',
   ],
   Innovation: [
-    'CeV Estándar',
-    'Pack Monádico',
+    'CeV EstÃ¡ndar',
+    'Pack MonÃ¡dico',
     'Idea Evaluate',
   ],
   Media: [
@@ -863,16 +863,16 @@ const SOLUTIONS = {
 //  Source: Precios_KMP_Chile_-_Agente.xlsx  (col refs = Excel cols)
 //
 //  For Creative the formula is:
-//    sample_cost   = sample_cost_per_unit * numAds          (col N × col M)
-//    cs_cost       = cs_cost_per_ad       * numAds          (col Q × col M)
-//    gdc           = gdc_per_ad           * numAds          (col R × col M, default 0)
-//    affectiva     = affectiva_per_ad     * numAds          (col S × col M, only if applies)
-//    eyesquare     = eyesquare_per_ad     * numAds          (col T × col M, only if applies)
-//    conversion    = conversion_per_ad    * numAds          (col V × col M, always)
+//    sample_cost   = sample_cost_per_unit * numAds          (col N Ã col M)
+//    cs_cost       = cs_cost_per_ad       * numAds          (col Q Ã col M)
+//    gdc           = gdc_per_ad           * numAds          (col R Ã col M, default 0)
+//    affectiva     = affectiva_per_ad     * numAds          (col S Ã col M, only if applies)
+//    eyesquare     = eyesquare_per_ad     * numAds          (col T Ã col M, only if applies)
+//    conversion    = conversion_per_ad    * numAds          (col V Ã col M, always)
 //
 //    Total Direct (col W) = sample + gdc + affectiva + eyesquare  (conv excluded from direct!)
 //    Total Costs  (col Y) = sample + gdc + affectiva + eyesquare + cs_cost
-//    Note: Conversión is NOT included in Total Direct per Excel formula
+//    Note: ConversiÃ³n is NOT included in Total Direct per Excel formula
 //
 //    Price CLP (col AA)  = price_uf_per_ad * numAds * ufRate
 //    Price UF  (col AC)  = price_uf_per_ad * numAds
@@ -885,9 +885,9 @@ const SOLUTIONS = {
 
 const SOLUTION_CONFIGS = {
 
-  // ── CREATIVE ──────────────────────────────────────────────
-  // Y (col 24) = (N + Q + R + S + T + V) × numAds
-  // AF = AA − Y  |  AH = AF / AA
+  // ââ CREATIVE ââââââââââââââââââââââââââââââââââââââââââââââ
+  // Y (col 24) = (N + Q + R + S + T + V) Ã numAds
+  // AF = AA â Y  |  AH = AF / AA
 
   'LEX con FC': {
     domain: 'Creative',
@@ -895,7 +895,7 @@ const SOLUTION_CONFIGS = {
     price_uf_per_ad: 170,
     delivery_base_days: 5,
     loi_default: 15, sample_default: 150,
-    obs: 'Se considera caída natural por variables sociodemográficas, sin cuotas.',
+    obs: 'Se considera caÃ­da natural por variables sociodemogrÃ¡ficas, sin cuotas.',
   },
   'LEX sin FC': {
     domain: 'Creative',
@@ -903,7 +903,7 @@ const SOLUTION_CONFIGS = {
     price_uf_per_ad: 140,
     delivery_base_days: 4,
     loi_default: 10, sample_default: 150,
-    obs: 'Se considera caída natural por variables sociodemográficas, sin cuotas.',
+    obs: 'Se considera caÃ­da natural por variables sociodemogrÃ¡ficas, sin cuotas.',
   },
   'LN4TV con FC': {
     domain: 'Creative',
@@ -911,7 +911,7 @@ const SOLUTION_CONFIGS = {
     price_uf_per_ad: 160,
     delivery_base_days: 3,
     loi_default: 12, sample_default: 150,
-    obs: 'Se considera caída natural por variables sociodemográficas, sin cuotas.',
+    obs: 'Se considera caÃ­da natural por variables sociodemogrÃ¡ficas, sin cuotas.',
   },
   'LN4TV sin FC': {
     domain: 'Creative',
@@ -919,7 +919,7 @@ const SOLUTION_CONFIGS = {
     price_uf_per_ad: 110,
     delivery_base_days: 3,
     loi_default: 10, sample_default: 150,
-    obs: 'Se considera caída natural por variables sociodemográficas, sin cuotas.',
+    obs: 'Se considera caÃ­da natural por variables sociodemogrÃ¡ficas, sin cuotas.',
   },
   'LN4Static': {
     domain: 'Creative',
@@ -927,7 +927,7 @@ const SOLUTION_CONFIGS = {
     price_uf_per_ad: 90,
     delivery_base_days: 3,
     loi_default: 10, sample_default: 150,
-    obs: 'Se considera caída natural por variables sociodemográficas, sin cuotas.',
+    obs: 'Se considera caÃ­da natural por variables sociodemogrÃ¡ficas, sin cuotas.',
   },
   'LEX4D con contexto': {
     domain: 'Creative',
@@ -935,7 +935,7 @@ const SOLUTION_CONFIGS = {
     price_uf_per_ad: 130,
     delivery_base_days: 4,
     loi_default: 15, sample_default: 150,
-    obs: 'Se considera caída natural por variables sociodemográficas, sin cuotas.',
+    obs: 'Se considera caÃ­da natural por variables sociodemogrÃ¡ficas, sin cuotas.',
   },
   'LEX4D sin contexto': {
     domain: 'Creative',
@@ -943,7 +943,7 @@ const SOLUTION_CONFIGS = {
     price_uf_per_ad: 100,
     delivery_base_days: 4,
     loi_default: 15, sample_default: 150,
-    obs: 'Se considera caída natural por variables sociodemográficas, sin cuotas.',
+    obs: 'Se considera caÃ­da natural por variables sociodemogrÃ¡ficas, sin cuotas.',
   },
   'LN4D con contexto': {
     domain: 'Creative',
@@ -951,7 +951,7 @@ const SOLUTION_CONFIGS = {
     price_uf_per_ad: 115,
     delivery_base_days: 3,
     loi_default: 10, sample_default: 150,
-    obs: 'Se considera caída natural por variables sociodemográficas, sin cuotas.',
+    obs: 'Se considera caÃ­da natural por variables sociodemogrÃ¡ficas, sin cuotas.',
   },
   'LN4D sin contexto': {
     domain: 'Creative',
@@ -959,7 +959,7 @@ const SOLUTION_CONFIGS = {
     price_uf_per_ad: 90,
     delivery_base_days: 3,
     loi_default: 8, sample_default: 150,
-    obs: 'Se considera caída natural por variables sociodemográficas, sin cuotas.',
+    obs: 'Se considera caÃ­da natural por variables sociodemogrÃ¡ficas, sin cuotas.',
   },
   'LN4D sin contexto 100 casos': {
     domain: 'Creative',
@@ -967,7 +967,7 @@ const SOLUTION_CONFIGS = {
     price_uf_per_ad: 60,
     delivery_base_days: 3,
     loi_default: 8, sample_default: 100,
-    obs: 'Se considera caída natural por variables sociodemográficas, sin cuotas.',
+    obs: 'Se considera caÃ­da natural por variables sociodemogrÃ¡ficas, sin cuotas.',
   },
   'Link AI': {
     domain: 'Creative',
@@ -976,21 +976,21 @@ const SOLUTION_CONFIGS = {
     delivery_base_days: 0,
     delivery_override: '3 horas',
     loi_default: 0, sample_default: 150,
-    obs: 'Se considera caída natural por variables sociodemográficas, sin cuotas.',
+    obs: 'Se considera caÃ­da natural por variables sociodemogrÃ¡ficas, sin cuotas.',
   },
 
-  // ── BRAND ─────────────────────────────────────────────────
-  // Brand usa col O (Sample Cost.1) — NO col N
+  // ââ BRAND âââââââââââââââââââââââââââââââââââââââââââââââââ
+  // Brand usa col O (Sample Cost.1) â NO col N
   // X (Total Direct) = O + R + S + T + V
   // Y (Total Costs)  = O + Q + R + S + T + V
-  // AF = AA − Y  |  AH = AF/AA
-  // AJ = AA − X  |  AL = AJ/AA
-  // (BrandEvaluator AJ viene del Excel directamente — fórmula interna diferente)
+  // AF = AA â Y  |  AH = AF/AA
+  // AJ = AA â X  |  AL = AJ/AA
+  // (BrandEvaluator AJ viene del Excel directamente â fÃ³rmula interna diferente)
 
   'BrandCampaign TV or Digital': {
     domain: 'Brand',
-    // O = CPI(6370) × casos_por_celda × celdas
-    // V = CONV_PER_AD(13720) × ads  (NO escala con celdas)
+    // O = CPI(6370) Ã casos_por_celda Ã celdas
+    // V = CONV_PER_AD(13720) Ã ads  (NO escala con celdas)
     // Q tabla exacta por ads | UF_per_celda tabla exacta por ads
     CPI: 6370,
     CONV_PER_AD: 13720,
@@ -1005,13 +1005,13 @@ const SOLUTION_CONFIGS = {
       8: { Q: 2176450, UF_per_celda: 320           },
     },
     loi_default: 10, sample_default: 150,
-    obs: 'Se considera caída natural por variables sociodemográficas, sin cuotas.', delivery: '5 días',
+    obs: 'Se considera caÃ­da natural por variables sociodemogrÃ¡ficas, sin cuotas.', delivery: '5 dÃ­as',
   },
 
   'BrandEvaluator': {
     domain: 'Brand',
-    // O = CPI(7448) × casos × celdas | X = O | Y = O + Q
-    // Sin Ads, sin Conversión, sin GDC
+    // O = CPI(7448) Ã casos Ã celdas | X = O | Y = O + Q
+    // Sin Ads, sin ConversiÃ³n, sin GDC
     // IR selecciona tabla de Q y UF
     CPI: 7448,
     CONV_PER_AD: 0,
@@ -1028,18 +1028,18 @@ const SOLUTION_CONFIGS = {
       },
     },
     loi_default: 15, sample_default: 600,
-    obs: 'Se considera caída natural por variables sociodemográficas, sin cuotas.', delivery: '9 días',
+    obs: 'Se considera caÃ­da natural por variables sociodemogrÃ¡ficas, sin cuotas.', delivery: '9 dÃ­as',
   },
-  // ── INNOVATION ────────────────────────────────────────────
-  // Misma lógica que Brand:
-  //   O = CPI × casos_por_celda × celdas
+  // ââ INNOVATION ââââââââââââââââââââââââââââââââââââââââââââ
+  // Misma lÃ³gica que Brand:
+  //   O = CPI Ã casos_por_celda Ã celdas
   //   X = O + R + S + T + V  (V=0 para CeV y Idea Evaluate)
   //   Y = X + Q
   //   AF = AA - Y  |  AH = AF/AA
   //   AJ = AA - X  |  AL = AJ/AA
-  //   UF = UF_per_celda × celdas
+  //   UF = UF_per_celda Ã celdas
 
-  'CeV Estándar': {
+  'CeV EstÃ¡ndar': {
     domain: 'Innovation',
     CPI_base: 5889.9933333,   // ads 1-2
     CPI_extra: 7136.5533333,  // ads 3+
@@ -1058,10 +1058,10 @@ const SOLUTION_CONFIGS = {
       12: { Q:  1776516, UF_per_celda: 340 },
     },
     loi_default: 10, sample_default: 150,
-    obs: 'Se considera caída natural por variables sociodemográficas, sin cuotas.', delivery: '3 días',
+    obs: 'Se considera caÃ­da natural por variables sociodemogrÃ¡ficas, sin cuotas.', delivery: '3 dÃ­as',
   },
 
-  'Pack Monádico': {
+  'Pack MonÃ¡dico': {
     domain: 'Innovation',
     CPI: 5889.80,
     CONV_PER_AD: 6860,
@@ -1083,7 +1083,7 @@ const SOLUTION_CONFIGS = {
       6: { Q:  2160992, UF_per_celda: 450.41095890410956 },
     },
     loi_default: 10, sample_default: 200,
-    obs: 'Se considera caída natural por variables sociodemográficas, sin cuotas.', delivery: '3 días',
+    obs: 'Se considera caÃ­da natural por variables sociodemogrÃ¡ficas, sin cuotas.', delivery: '3 dÃ­as',
   },
 
   'Idea Evaluate': {
@@ -1106,15 +1106,15 @@ const SOLUTION_CONFIGS = {
       24: { Q:  2457078, UF_per_celda: 355 },
     },
     loi_default: 15, sample_default: 100,
-    obs: 'Se considera caída natural por variables sociodemográficas, sin cuotas.', delivery: '3 días',
+    obs: 'Se considera caÃ­da natural por variables sociodemogrÃ¡ficas, sin cuotas.', delivery: '3 dÃ­as',
   },
 
   'Context Lab': {
     domain: 'Media',
-    // O = CPI(7479.36) × casos × celdas
-    // T (EyeSquare) = 381.240 × celdas  |  V (Conv) = 9.800 × celdas
-    // Ads = celdas (automático)
-    // X = O + T + V  |  Y = X + Q  |  UF = 150 × celdas
+    // O = CPI(7479.36) Ã casos Ã celdas
+    // T (EyeSquare) = 381.240 Ã celdas  |  V (Conv) = 9.800 Ã celdas
+    // Ads = celdas (automÃ¡tico)
+    // X = O + T + V  |  Y = X + Q  |  UF = 150 Ã celdas
     CPI: 7479.36,
     T_per_celda: 381240,
     CONV_per_celda: 9800,
@@ -1122,7 +1122,7 @@ const SOLUTION_CONFIGS = {
     UF_per_celda: 150,
     casos_options: [200],
     loi_default: 10, sample_default: 200,
-    obs: 'Se considera caída natural por variables sociodemográficas, sin cuotas.', delivery: '6 días',
+    obs: 'Se considera caÃ­da natural por variables sociodemogrÃ¡ficas, sin cuotas.', delivery: '6 dÃ­as',
   },
 };
 
@@ -1133,15 +1133,15 @@ let serviceLevel = 'with';
 let currentSolution = null;
 
 function fmt(n) {
-  if (n === undefined || n === null || isNaN(n)) return '—';
+  if (n === undefined || n === null || isNaN(n)) return 'â';
   return Math.round(n).toLocaleString('es-CL');
 }
 function fmtDec(n, d=1) {
-  if (n === undefined || n === null || isNaN(n)) return '—';
+  if (n === undefined || n === null || isNaN(n)) return 'â';
   return n.toFixed(d);
 }
 function pct(n) {
-  if (!isFinite(n)) return '—';
+  if (!isFinite(n)) return 'â';
   return Math.round(n * 100) + '%';
 }
 function pctColor(n) {
@@ -1151,7 +1151,7 @@ function pctColor(n) {
 }
 
 // ============================================================
-//  LIVE RATES — mindicador.cl (fuente: Banco Central de Chile)
+//  LIVE RATES â mindicador.cl (fuente: Banco Central de Chile)
 // ============================================================
 const FALLBACK_USD = 890;
 const FALLBACK_UF  = 40782;
@@ -1159,7 +1159,7 @@ const FALLBACK_UF  = 40782;
 async function fetchLiveRates() {
   const badge = document.getElementById('rate-badge');
   badge.className = 'rate-badge loading';
-  document.getElementById('rate-date').textContent = 'actualizando…';
+  document.getElementById('rate-date').textContent = 'actualizandoâ¦';
   try {
     const res = await fetch('./rates.json?t=' + Date.now(), { cache: 'no-store' });
     if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -1167,7 +1167,7 @@ async function fetchLiveRates() {
 
     const usd = data.dolar?.valor;
     const uf  = data.uf?.valor;
-    const fechaRaw = data.dolar?.fecha || data.uf?.fecha || '';
+    const fechaRaw = data.uf?.fecha || data.dolar?.fecha || '';
     const fecha = fechaRaw ? new Date(fechaRaw).toLocaleDateString('es-CL', { day:'2-digit', month:'2-digit', year:'2-digit' }) : '';
 
     if (usd && uf) {
@@ -1182,12 +1182,12 @@ async function fetchLiveRates() {
       throw new Error('Datos incompletos');
     }
   } catch (e) {
-    console.warn('mindicador.cl error:', e.message, '— usando valores de respaldo');
+    console.warn('mindicador.cl error:', e.message, 'â usando valores de respaldo');
     document.getElementById('usd-rate').value = FALLBACK_USD;
     document.getElementById('uf-rate').value  = FALLBACK_UF;
     document.getElementById('hdr-usd').textContent = FALLBACK_USD.toLocaleString('es-CL');
     document.getElementById('hdr-uf').textContent  = FALLBACK_UF.toLocaleString('es-CL');
-    document.getElementById('rate-date').textContent = 'sin conexión';
+    document.getElementById('rate-date').textContent = 'sin conexiÃ³n';
     badge.className = 'rate-badge error';
     calculate();
   }
@@ -1236,7 +1236,7 @@ function setServiceLevel(level) {
 function onDomainChange() {
   const domain = document.getElementById('domain').value;
   const solSelect = document.getElementById('solution');
-  solSelect.innerHTML = '<option value="">— Selecciona solución —</option>';
+  solSelect.innerHTML = '<option value="">â Selecciona soluciÃ³n â</option>';
   if (domain && SOLUTIONS[domain]) {
     SOLUTIONS[domain].forEach(s => {
       const opt = document.createElement('option');
@@ -1247,7 +1247,7 @@ function onDomainChange() {
   // Mostrar campo Celdas solo para Brand
   const isBrand = domain === 'Brand';
   document.getElementById('celdas-group').style.display = isBrand ? 'block' : 'none';
-  // Para Brand: Nº Ads label cambia según solución; ocultar si es BrandEvaluator
+  // Para Brand: NÂº Ads label cambia segÃºn soluciÃ³n; ocultar si es BrandEvaluator
   currentSolution = null;
   onSolutionChange();
 }
@@ -1277,7 +1277,7 @@ function onSolutionChange() {
 
     let casosOptions;
     if (cfg.casos_options) {
-      // Usar opciones específicas del config (Innovation, BrandEvaluator, Context Lab)
+      // Usar opciones especÃ­ficas del config (Innovation, BrandEvaluator, Context Lab)
       casosOptions = cfg.casos_options;
     } else if (isBrandCampaign) {
       casosOptions = [150, 225, 300, 375, 450, 525, 600];
@@ -1366,7 +1366,7 @@ function onBrandParamsChange() {
   const celdas = parseInt(document.getElementById('num-celdas').value) || 1;
   const casosPorCelda = getCasosPorCelda();
   document.getElementById('sample-size').value = celdas * casosPorCelda;
-  // Context Lab: Ads = Celdas automáticamente
+  // Context Lab: Ads = Celdas automÃ¡ticamente
   if (currentSolution && SOLUTION_CONFIGS[currentSolution] &&
       SOLUTION_CONFIGS[currentSolution].domain === 'Media') {
     document.getElementById('num-ads').value = celdas;
@@ -1418,7 +1418,7 @@ function calculate() {
   let totalDirect, totalCosts, priceUF, delivery;
 
   // ============================================================
-  //  CREATIVE — Y = (N + Q + R + S + T + V) × numAds
+  //  CREATIVE â Y = (N + Q + R + S + T + V) Ã numAds
   // ============================================================
   if (domain === 'Creative') {
 
@@ -1449,7 +1449,7 @@ function calculate() {
     // Col Y = N + Q + R + S + T + V
     totalCosts  = N + Q + R + S + T + V;
 
-    // Col W (Total Direct) = Y − Q  (sin CS)
+    // Col W (Total Direct) = Y â Q  (sin CS)
     totalDirect = totalCosts - Q;
 
     // Exponer para UI
@@ -1461,7 +1461,7 @@ function calculate() {
     linkaiCost    = 0;
     convCost      = V;
 
-    // Precio a cliente (col AC = UF/ad × numAds)
+    // Precio a cliente (col AC = UF/ad Ã numAds)
     const priceOverride = document.getElementById('price-uf-override').value;
     priceUF = priceOverride !== ''
       ? parseFloat(priceOverride)
@@ -1472,7 +1472,7 @@ function calculate() {
       delivery = cfg.delivery_override;
     } else {
       const extra = numAds > 1 ? Math.floor((numAds - 1) / 2) : 0;
-      delivery = `${cfg.delivery_base_days + extra} días`;
+      delivery = `${cfg.delivery_base_days + extra} dÃ­as`;
     }
 
   // ============================================================
@@ -1487,14 +1487,14 @@ function calculate() {
       const casosPorCelda = getCasosPorCelda();
       const totalCasos    = celdas * casosPorCelda;
 
-      // O (col O) = CPI × casos_por_celda × celdas
+      // O (col O) = CPI Ã casos_por_celda Ã celdas
       sampleCost    = cfg.CPI * totalCasos;
       csCost        = t.Q;
       gdcCost       = 0;
       affectivaCost = 0;
       eyesquareCost = 0;
       linkaiCost    = 0;
-      // V (conv) = CONV_PER_AD × ads  (NO escala con celdas)
+      // V (conv) = CONV_PER_AD Ã ads  (NO escala con celdas)
       convCost      = cfg.CONV_PER_AD * ads;
 
       // X (col X) = O + R + S + T + V
@@ -1502,7 +1502,7 @@ function calculate() {
       // Y (col Y) = X + Q
       totalCosts  = totalDirect + csCost;
 
-      // UF = UF_per_celda × celdas
+      // UF = UF_per_celda Ã celdas
       priceUF    = document.getElementById('price-uf-override').value !== ''
         ? parseFloat(document.getElementById('price-uf-override').value)
         : t.UF_per_celda * celdas;
@@ -1510,7 +1510,7 @@ function calculate() {
       sampleSize = totalCasos;
 
     } else {
-      // BrandEvaluator — misma lógica que BrandCampaign pero sin Ads ni Conversión
+      // BrandEvaluator â misma lÃ³gica que BrandCampaign pero sin Ads ni ConversiÃ³n
       const celdas        = parseInt(document.getElementById('num-celdas').value) || 1;
       const casosPorCelda = getCasosPorCelda();
       const totalCasos    = celdas * casosPorCelda;
@@ -1519,7 +1519,7 @@ function calculate() {
       const irTable       = cfg.table_ir[irVal] || cfg.table_ir['high'];
       const t             = irTable[cKey];
 
-      // O = CPI × casos × celdas
+      // O = CPI Ã casos Ã celdas
       sampleCost    = cfg.CPI * totalCasos;
       csCost        = t.Q;
       gdcCost       = 0;
@@ -1532,7 +1532,7 @@ function calculate() {
       totalDirect = sampleCost;
       totalCosts  = sampleCost + csCost;
 
-      // UF = UF_per_celda × celdas
+      // UF = UF_per_celda Ã celdas
       priceUF    = document.getElementById('price-uf-override').value !== ''
         ? parseFloat(document.getElementById('price-uf-override').value)
         : t.UF_per_celda * celdas;
@@ -1547,7 +1547,7 @@ function calculate() {
     const totalCasos    = celdas * casosPorCelda;
     const ads           = numAds;
 
-    // Lookup tabla: buscar ads exacto, si no existe usar el más cercano inferior
+    // Lookup tabla: buscar ads exacto, si no existe usar el mÃ¡s cercano inferior
     function lookupTable(table, key) {
       const keys = Object.keys(table).map(Number).sort((a,b) => a-b);
       let best = keys[0];
@@ -1556,12 +1556,12 @@ function calculate() {
     }
 
     let t, CPI;
-    if (sol === 'Pack Monádico') {
-      // casos/ad = casosPorCelda / ads → ≤100 usa table_100, >100 usa table_150
+    if (sol === 'Pack MonÃ¡dico') {
+      // casos/ad = casosPorCelda / ads â â¤100 usa table_100, >100 usa table_150
       const casosPorAd = casosPorCelda / ads;
       t   = casosPorAd <= 100 ? lookupTable(cfg.table_100, ads) : lookupTable(cfg.table_150, ads);
       CPI = cfg.CPI;
-    } else if (sol === 'CeV Estándar') {
+    } else if (sol === 'CeV EstÃ¡ndar') {
       // CPI ads 1-2 = 5890 | ads 3+ = 7136.56
       CPI = ads <= 2 ? cfg.CPI_base : cfg.CPI_extra;
       t   = lookupTable(cfg.table, ads);
@@ -1577,7 +1577,7 @@ function calculate() {
     affectivaCost = 0;
     eyesquareCost = 0;
     linkaiCost    = 0;
-    // V = CONV_PER_AD × ads (0 para CeV e Idea, 6860×ads para Pack)
+    // V = CONV_PER_AD Ã ads (0 para CeV e Idea, 6860Ãads para Pack)
     convCost      = (cfg.CONV_PER_AD || 0) * ads;
 
     // X = O + V  (R=S=T=0 para Innovation)
@@ -1602,10 +1602,10 @@ function calculate() {
     const casosPorCelda = getCasosPorCelda();
     const totalCasos    = celdas * casosPorCelda;
 
-    // Ads = celdas (automático — sincronizado en UI)
+    // Ads = celdas (automÃ¡tico â sincronizado en UI)
     document.getElementById('num-ads').value = celdas;
 
-    // O = CPI × casos × celdas
+    // O = CPI Ã casos Ã celdas
     sampleCost    = cfg.CPI * totalCasos;
     csCost        = cfg.Q_per_celda * celdas;
     gdcCost       = 0;
@@ -1619,7 +1619,7 @@ function calculate() {
     // Y = X + Q
     totalCosts  = totalDirect + csCost;
 
-    // UF = UF_per_celda × celdas
+    // UF = UF_per_celda Ã celdas
     priceUF    = document.getElementById('price-uf-override').value !== ''
       ? parseFloat(document.getElementById('price-uf-override').value)
       : cfg.UF_per_celda * celdas;
@@ -1628,20 +1628,20 @@ function calculate() {
 
   } // end Context Lab
 
-  // ── Precio a Cliente (col AA = UF × UF rate) ──
+  // ââ Precio a Cliente (col AA = UF Ã UF rate) ââ
   const priceCLP = priceUF * ufRate;
   const priceUSD = priceCLP / usdRate;
 
   // effectiveTotalCosts: sin CS cuando Without Service
   const effectiveTotalCosts = serviceLevel === 'without' ? totalDirect : totalCosts;
 
-  // ── OP ($) col AF = AA − Y  ───────────────────────────────
-  // ── OP (%) col AH = AF / AA ──────────────────────────────
+  // ââ OP ($) col AF = AA â Y  âââââââââââââââââââââââââââââââ
+  // ââ OP (%) col AH = AF / AA ââââââââââââââââââââââââââââââ
   const op    = priceCLP - effectiveTotalCosts;
   const opPct = priceCLP > 0 ? op / priceCLP : 0;
 
-  // ── NS ($) col AJ = AA − X  ──────────────────────────────
-  // ── NS (%) col AL = AJ / AA ──────────────────────────────
+  // ââ NS ($) col AJ = AA â X  ââââââââââââââââââââââââââââââ
+  // ââ NS (%) col AL = AJ / AA ââââââââââââââââââââââââââââââ
   const ns    = priceCLP - totalDirect;
   const nsPct = priceCLP > 0 ? ns / priceCLP : 0;
 
@@ -1656,7 +1656,7 @@ function calculate() {
 
   document.getElementById('res-solution-name').textContent = sol;
   document.getElementById('res-subtitle').textContent =
-    `Chile · ${domain} · ${serviceLevel === 'with' ? 'With Service' : 'Without Service'} · ${numAds} ${numAds === 1 ? 'pieza' : 'piezas'}`;
+    `Chile Â· ${domain} Â· ${serviceLevel === 'with' ? 'With Service' : 'Without Service'} Â· ${numAds} ${numAds === 1 ? 'pieza' : 'piezas'}`;
   document.getElementById('res-delivery').textContent = delivery;
 
   document.getElementById('res-price-clp').textContent = fmt(priceCLP);
@@ -1681,7 +1681,7 @@ function calculate() {
   nsEl.className = 'prof-pct ' + pctColor(nsPct);
   document.getElementById('res-ns-clp').textContent = '$' + fmt(ns) + ' CLP';
 
-  // ── Tabla de desglose ──────────────────────────────────────
+  // ââ Tabla de desglose ââââââââââââââââââââââââââââââââââââââ
   const tbody = document.getElementById('detail-tbody');
   const isCreative = domain === 'Creative';
 
@@ -1691,7 +1691,7 @@ function calculate() {
     { name: 'Affectiva',          clp: affectivaCost },
     { name: 'EyeSquare',          clp: eyesquareCost },
     { name: 'Link AI Platform',   clp: linkaiCost,   hide: isCreative },
-    { name: 'Conversión',         clp: convCost      },
+    { name: 'ConversiÃ³n',         clp: convCost      },
     { name: 'CS Cost (indirecto)', clp: csCost,      internal: true },
   ];
 
@@ -1702,9 +1702,9 @@ function calculate() {
     const cls = isZero ? 'td-zero' : r.internal ? 'td-highlight' : 'td-amount';
     html += `<tr>
       <td class="td-name">${r.name}</td>
-      <td style="text-align:right" class="${cls}">${isZero ? '—' : '$' + fmt(r.clp)}</td>
-      <td style="text-align:right" class="${cls}">${isZero ? '—' : fmtDec(r.clp / ufRate, 2) + ' UF'}</td>
-      <td style="text-align:right" class="${cls}">${isZero ? '—' : '$' + fmt(r.clp / usdRate)}</td>
+      <td style="text-align:right" class="${cls}">${isZero ? 'â' : '$' + fmt(r.clp)}</td>
+      <td style="text-align:right" class="${cls}">${isZero ? 'â' : fmtDec(r.clp / ufRate, 2) + ' UF'}</td>
+      <td style="text-align:right" class="${cls}">${isZero ? 'â' : '$' + fmt(r.clp / usdRate)}</td>
     </tr>`;
   });
 
@@ -1740,7 +1740,7 @@ function calculate() {
     obsBox.style.display = 'none';
   }
 
-  // Habilitar botones de acción
+  // Habilitar botones de acciÃ³n
   document.getElementById('btn-export').disabled = false;
   document.getElementById('btn-email').disabled  = false;
 
@@ -1766,7 +1766,7 @@ function exportToExcel() {
   const c = _lastCalc;
   const btn = document.getElementById('btn-export');
   btn.disabled = true;
-  btn.innerHTML = '⏳ Generando…';
+  btn.innerHTML = 'â³ Generandoâ¦';
 
   try {
     const WB = XLSX.utils.book_new();
@@ -1776,7 +1776,7 @@ function exportToExcel() {
     // Helper: cell con formato
     const n  = (v, fmt) => ({ t:'n', v: Math.round(v),  z: fmt });
     const nd = (v, fmt) => ({ t:'n', v: parseFloat(v),  z: fmt });
-    const s  = (v)      => ({ t:'s', v: String(v || '—') });
+    const s  = (v)      => ({ t:'s', v: String(v || 'â') });
     const empty = ()    => ({ t:'s', v:'' });
 
     const CLP = '"$"#,##0';
@@ -1786,22 +1786,22 @@ function exportToExcel() {
     const NUM = '#,##0';
 
     const rows = [
-      [s('KMP CHILE · COTIZACIÓN'), empty(), empty(), empty()],
+      [s('KMP CHILE Â· COTIZACIÃN'), empty(), empty(), empty()],
       [s(`Generado: ${fecha} ${hora}`), empty(), empty(), empty()],
       [empty(), empty(), empty(), empty()],
-      [s('INFORMACIÓN GENERAL'), empty(), empty(), empty()],
+      [s('INFORMACIÃN GENERAL'), empty(), empty(), empty()],
       [s('Nombre de Proyecto'),  s(document.getElementById('project-name').value),  empty(), empty()],
       [s('Target'),              s(document.getElementById('project-target').value), empty(), empty()],
       [s('Domain'),              s(c.domain), empty(), empty()],
-      [s('Tipo de Solución'),    s(c.sol),    empty(), empty()],
+      [s('Tipo de SoluciÃ³n'),    s(c.sol),    empty(), empty()],
       [s('Nivel de Servicio'),   s(c.serviceLevel === 'with' ? 'With Service' : 'Without Service'), empty(), empty()],
       [s('# Ads / C&P'),         n(c.numAds,    NUM), empty(), empty()],
       [s('Sample Size'),         n(c.sampleSize, NUM), empty(), empty()],
       [s('LOI (min)'),           n(c.loi,        NUM), empty(), empty()],
       [s('Entrega estimada'),    s(c.delivery),  empty(), empty()],
       [empty(), empty(), empty(), empty()],
-      [s('TASAS DEL DÍA'),       empty(),        empty(), empty()],
-      [s('Dólar (CLP)'),         n(c.usdRate,    CLP), empty(), empty()],
+      [s('TASAS DEL DÃA'),       empty(),        empty(), empty()],
+      [s('DÃ³lar (CLP)'),         n(c.usdRate,    CLP), empty(), empty()],
       [s('UF (CLP)'),            n(c.ufRate,     CLP), empty(), empty()],
       [empty(), empty(), empty(), empty()],
       [s('DESGLOSE DE COSTOS'),  s('CLP'),  s('UF'),  s('USD')],
@@ -1810,7 +1810,7 @@ function exportToExcel() {
       [s('GDC'),            n(c.gdcCost,       CLP), nd(c.gdcCost/c.ufRate,       UF), n(c.gdcCost/c.usdRate,       USD)],
       [s('Affectiva'),      n(c.affectivaCost, CLP), nd(c.affectivaCost/c.ufRate, UF), n(c.affectivaCost/c.usdRate, USD)],
       [s('EyeSquare'),      n(c.eyesquareCost, CLP), nd(c.eyesquareCost/c.ufRate, UF), n(c.eyesquareCost/c.usdRate, USD)],
-      [s('Conversión'),     n(c.convCost,      CLP), nd(c.convCost/c.ufRate,      UF), n(c.convCost/c.usdRate,      USD)],
+      [s('ConversiÃ³n'),     n(c.convCost,      CLP), nd(c.convCost/c.ufRate,      UF), n(c.convCost/c.usdRate,      USD)],
       [empty(), empty(), empty(), empty()],
       [s('Total Costos Directos'), n(c.totalDirect, CLP), nd(c.totalDirect/c.ufRate, UF), n(c.totalDirect/c.usdRate, USD)],
       [s('Total Costs'),           n(c.totalCosts,  CLP), nd(c.totalCosts/c.ufRate,  UF), n(c.totalCosts/c.usdRate,  USD)],
@@ -1827,7 +1827,7 @@ function exportToExcel() {
     const WS = XLSX.utils.aoa_to_sheet(rows);
     WS['!cols'] = [{wch:30},{wch:18},{wch:14},{wch:14}];
 
-    XLSX.utils.book_append_sheet(WB, WS, 'Cotización KMP');
+    XLSX.utils.book_append_sheet(WB, WS, 'CotizaciÃ³n KMP');
 
     const solShort = c.sol.replace(/[^a-zA-Z0-9]/g,'_').substring(0,20);
     const dateStr  = new Date().toISOString().slice(0,10);
@@ -1849,7 +1849,7 @@ function sendByEmail() {
   const c   = _lastCalc;
   const btn = document.getElementById('btn-email');
   btn.disabled = true;
-  btn.innerHTML = '⏳ Generando…';
+  btn.innerHTML = 'â³ Generandoâ¦';
 
   try {
     const projectName = (document.getElementById('project-name').value || 'Sin nombre').trim();
@@ -1858,18 +1858,18 @@ function sendByEmail() {
     const dateStr     = new Date().toISOString().slice(0,10);
     const fileName    = `KMP_Cotizacion_${solShort}_${dateStr}.xlsx`;
 
-    // ── 1. Descargar el Excel ──
+    // ââ 1. Descargar el Excel ââ
     exportToExcel();
 
-    // ── 2. Abrir cliente de correo con todo pre-llenado ──
+    // ââ 2. Abrir cliente de correo con todo pre-llenado ââ
     const to      = 'francisco.cubillos@kantar.com,raul.ramis@kantar.com,cristian.zavaleta@kantar.com';
-    const subject = encodeURIComponent(`Solicitud de revisión · Cotización KMP · ${projectName} · ${fecha}`);
+    const subject = encodeURIComponent(`Solicitud de revisiÃ³n Â· CotizaciÃ³n KMP Â· ${projectName} Â· ${fecha}`);
     const body    = encodeURIComponent(
 `Estimado equipo,
 
-Les comparto la cotización generada para el proyecto "${projectName}" con fecha ${fecha}, para su revisión y confirmación.
+Les comparto la cotizaciÃ³n generada para el proyecto "${projectName}" con fecha ${fecha}, para su revisiÃ³n y confirmaciÃ³n.
 
-Por favor, revisen los costos y la viabilidad de la cotización adjunta (archivo: ${fileName}).
+Por favor, revisen los costos y la viabilidad de la cotizaciÃ³n adjunta (archivo: ${fileName}).
 
 Quedo atento a sus comentarios y confirmaciones.
 
@@ -1880,13 +1880,13 @@ Saludos,`
       window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
     }, 400);
 
-    // ── 3. Toast: recordar adjuntar el Excel ──
+    // ââ 3. Toast: recordar adjuntar el Excel ââ
     const existing = document.getElementById('email-toast');
     if (existing) existing.remove();
     const toast = document.createElement('div');
     toast.id        = 'email-toast';
     toast.className = 'toast';
-    toast.innerHTML = `<b>📎 Adjunta el Excel</b><br>El archivo <b>${fileName}</b> se descargó a tu carpeta de Descargas.<br>Arrástralo al correo antes de enviar.`;
+    toast.innerHTML = `<b>ð Adjunta el Excel</b><br>El archivo <b>${fileName}</b> se descargÃ³ a tu carpeta de Descargas.<br>ArrÃ¡stralo al correo antes de enviar.`;
     document.body.appendChild(toast);
     setTimeout(() => {
       toast.style.transition = 'opacity .4s';
@@ -1902,7 +1902,7 @@ Saludos,`
   }
 }
 
-// ── COLLAPSIBLE: Costos directos ──
+// ââ COLLAPSIBLE: Costos directos ââ
 function toggleCostos() {
   const body = document.getElementById('costos-body');
   const icon = document.getElementById('costos-icon');
